@@ -1,5 +1,5 @@
 @import url(https://100dayscss.com/codepen/css/font-awesome.min.css);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400);
+@import url(https://fonts.googleapis.com/css?family=Open + Sans:400);
 .center {
   position: relative;
   width: 100%;
@@ -32,7 +32,7 @@
   color: #ffffff;
   cursor: pointer;
   font-size: 64px;
-  transition: background .5s ease-in-out;
+  transition: background 0.5s ease-in-out;
 }
 .center .tab.search {
   float: right;
@@ -62,7 +62,7 @@
   padding-left: 8px;
   color: #ffff;
   width: 100%;
-  transition: all .3s ease-in;
+  transition: all 0.3s ease-in;
 }
 
 button {
@@ -76,7 +76,7 @@ button {
   pointer-events: all;
   opacity: 1;
   transform: translateY(0);
-  transition: all .5s ease-out .4s;
+  transition: all 0.5s ease-out 0.4s;
 }
 
 .card {
@@ -119,27 +119,27 @@ div.scrollmenu .card:hover {
   background-color: #777;
 }
 
-[type=range] {
+[type="range"] {
   -webkit-appearance: none;
   margin: 0;
   width: 150px;
 }
-[type=range]:focus {
+[type="range"]:focus {
   outline: none;
 }
-[type=range]::-moz-focus-outer {
+[type="range"]::-moz-focus-outer {
   border: 0;
 }
-[type=range]::-webkit-slider-runnable-track {
+[type="range"]::-webkit-slider-runnable-track {
   width: 150px;
   height: 4px;
   cursor: pointer;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   background: #666;
   border: none;
   border-radius: 2px;
 }
-[type=range]::-webkit-slider-thumb {
+[type="range"]::-webkit-slider-thumb {
   height: 14px;
   width: 14px;
   border-radius: 14px;
@@ -149,16 +149,16 @@ div.scrollmenu .card:hover {
   -webkit-appearance: none;
   margin-top: -5px;
 }
-[type=range]::-moz-range-track {
+[type="range"]::-moz-range-track {
   width: 150px;
   height: 4px;
   cursor: pointer;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   background: #666;
   border: none;
   border-radius: 2px;
 }
-[type=range]::-moz-range-thumb {
+[type="range"]::-moz-range-thumb {
   height: 14px;
   width: 14px;
   border-radius: 14px;
@@ -166,22 +166,23 @@ div.scrollmenu .card:hover {
   background-size: 50% 50%;
   cursor: pointer;
 }
-[type=range]::-ms-track {
+[type="range"]::-ms-track {
   width: 150px;
   height: 4px;
   cursor: pointer;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   background: transparent;
   border-color: none;
   color: transparent;
   border-radius: 10px;
 }
-[type=range]::-ms-fill-lower, [type=range]::-ms-fill-upper {
+[type="range"]::-ms-fill-lower,
+[type="range"]::-ms-fill-upper {
   background: #666;
   border: none;
   border-radius: 2px;
 }
-[type=range]::-ms-thumb {
+[type="range"]::-ms-thumb {
   height: 14px;
   width: 14px;
   border-radius: 14px;
@@ -192,12 +193,12 @@ div.scrollmenu .card:hover {
 
 * {
   margin: 0;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   color: #ffffff;
 }
 
 body {
-  background: #2B2B2D;
+  background: #2b2b2d;
 }
 
 .bg-info {
@@ -300,27 +301,27 @@ label {
     margin-bottom: 30px;
   }
 
-  [type=range] {
+  [type="range"] {
     -webkit-appearance: none;
     transform: translateY(-30px);
     width: 100px;
   }
-  [type=range]:focus {
+  [type="range"]:focus {
     outline: none;
   }
-  [type=range]::-moz-focus-outer {
+  [type="range"]::-moz-focus-outer {
     border: 0;
   }
-  [type=range]::-webkit-slider-runnable-track {
+  [type="range"]::-webkit-slider-runnable-track {
     width: 100px;
     height: 4px;
     cursor: pointer;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
     background: #666;
     border: none;
     border-radius: 2px;
   }
-  [type=range]::-webkit-slider-thumb {
+  [type="range"]::-webkit-slider-thumb {
     height: 14px;
     width: 14px;
     border-radius: 14px;
@@ -330,16 +331,16 @@ label {
     -webkit-appearance: none;
     margin-top: -5px;
   }
-  [type=range]::-moz-range-track {
+  [type="range"]::-moz-range-track {
     width: 100px;
     height: 4px;
     cursor: pointer;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
     background: #666;
     border: none;
     border-radius: 2px;
   }
-  [type=range]::-moz-range-thumb {
+  [type="range"]::-moz-range-thumb {
     height: 14px;
     width: 14px;
     border-radius: 14px;
@@ -347,22 +348,23 @@ label {
     background-size: 50% 50%;
     cursor: pointer;
   }
-  [type=range]::-ms-track {
+  [type="range"]::-ms-track {
     width: 100px;
     height: 4px;
     cursor: pointer;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
     background: transparent;
     border-color: none;
     color: transparent;
     border-radius: 10px;
   }
-  [type=range]::-ms-fill-lower, [type=range]::-ms-fill-upper {
+  [type="range"]::-ms-fill-lower,
+  [type="range"]::-ms-fill-upper {
     background: #666;
     border: none;
     border-radius: 2px;
   }
-  [type=range]::-ms-thumb {
+  [type="range"]::-ms-thumb {
     height: 14px;
     width: 14px;
     border-radius: 14px;
