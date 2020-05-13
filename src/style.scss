@@ -1,15 +1,124 @@
 @import url(https://100dayscss.com/codepen/css/font-awesome.min.css);
 @import url(https://fonts.googleapis.com/css?family=Open + Sans:400);
-$track-color: #666;
-$thumb-color: #fff;
 
-$thumb-radius: 14px;
-$thumb-height: 14px;
-$thumb-width: 14px;
+.center1 {
+  width: 250px;
+  position: absolute;
+  background: #fff;
+  box-shadow: 8px 10px 15px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
 
-$track-width: 150px;
-$track-height: 4px;
-$track-radius: 2px;
+.title1 {
+  font-size: 16px;
+  color: #676767;
+  line-height: 50px;
+  height: 50px;
+  border-bottom: 1px solid #d8d8d8;
+  text-align: center;
+}
+
+.content {
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .input {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+.upload-btn {
+  width: 140px;
+  height: 40px;
+  background: rgb(238, 77, 86);
+  background: -moz-linear-gradient(153deg, rgba(238, 77, 86, 1) 0%, rgba(243, 145, 91, 1) 100%);
+  background: -webkit-linear-gradient(153deg, rgba(238, 77, 86, 1) 0%, rgba(243, 145, 91, 1) 100%);
+  background: linear-gradient(153deg, rgba(238, 77, 86, 1) 0%, rgba(243, 145, 91, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ee4d56",endColorstr="#f3915b",GradientType=1);
+  border-radius: 20px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 20px 0 30px 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.option {
+  display: none;
+}
+.save {
+  display: flex;
+  justify-content: space-between;
+}
+
+.download {
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  line-height: 46px;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  background: #ffd843;
+  .front {
+    display: block;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    color: #000;
+    padding: 0 20px;
+  }
+  svg {
+    display: none;
+  }
+}
+.revert-btn {
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  line-height: 46px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #ee472a;
+
+  .front {
+    display: block;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    color: #fff;
+    padding: 0 20px;
+  }
+  svg {
+    display: none;
+  }
+}
 
 .center {
   position: relative;
@@ -19,6 +128,8 @@ $track-radius: 2px;
   border: 2px solid rgba(255, 152, 0, 0.3);
   border-radius: 10px;
   margin-bottom: 20px;
+  display: none;
+  margin-top: 10px;
 
   .top {
     position: absolute;
@@ -136,7 +247,16 @@ div.scrollmenu .card:hover {
   background-color: #777;
 }
 
+$track-color: #666;
+$thumb-color: #fff;
 
+$thumb-radius: 14px;
+$thumb-height: 14px;
+$thumb-width: 14px;
+
+$track-width: 150px;
+$track-height: 4px;
+$track-radius: 2px;
 
 @mixin track() {
   width: $track-width;
@@ -227,14 +347,18 @@ body {
 .navbar-brand {
   color: #ffffff !important;
 }
+.cropper-container {
+  margin-bottom: 40px;
+}
 
 #canvas {
   margin: 30px auto 20px auto;
   background: #0d0d0d;
   width: 100%;
-  height: 400px;
+  height: 500px;
   border-radius: 15px;
   box-shadow: 1px 2px 15px 2px rgba(255, 152, 0, 0.3);
+  overflow: hidden;
 }
 
 .cropper-container {
@@ -270,11 +394,49 @@ label {
 }
 
 @media only screen and (max-width: 1076px) {
+  .save {
+    display: flex;
+    justify-content: space-between;
+    height: 35px;
+  }
+  .revert {
+    height: 100%;
+  }
+  .download {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    background: #ffd843;
+    .front {
+      display: none;
+    }
+    svg {
+      display: block;
+    }
+  }
+  .revert-btn {
+    display: flex;
+    height: 100%;
+    border-radius: 50px;
+    cursor: pointer;
+    background: #ee472a;
+    font-size: 0px;
+    svg {
+      display: block;
+      margin-top: 3px;
+    }
+  }
+  .canvasconatainer {
+    margin: 20px;
+  }
   #canvas {
     margin: 30px auto 20px auto;
     background: #0d0d0d;
     width: 100%;
-    height: 200px;
+    height: 250px;
     border-radius: 15px;
     box-shadow: 1px 2px 15px 2px rgba(255, 152, 0, 0.3);
   }
@@ -283,6 +445,18 @@ label {
   }
   .btn-block {
     font-size: 12px;
+  }
+  #box-1 {
+    padding-top: 16px;
+  }
+  #box-2 {
+    padding-top: 16px;
+  }
+  #box-3 {
+    padding-top: 16px;
+  }
+  .tab {
+    height: 50px;
   }
   .size {
     padding: 0;
@@ -390,6 +564,12 @@ label {
 
     &::-ms-thumb {
       @include thumb();
+    }
+  }
+  .center {
+    height: 100px;
+    .top {
+      height: 50px;
     }
   }
 }

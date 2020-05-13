@@ -10,31 +10,51 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,600&display=swap" rel="stylesheet">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/cropper/2.3.3/cropper.css'>
   <link rel="stylesheet" href="./style.css">
-
 </head>
 
 <body>
   <!-- partial:index.partial.html -->
   <nav class="navbar navbar-dark bg-info mb-5">
     <div class="container">
-      <a href="#" class="navbar-brand">Online editior</a>
+      <a href="#" class="navbar-brand">Image editior</a>
     </div>
   </nav>
   <div class="container">
     <div class="row">
       <div class="col-md-10 m-auto">
-        <div class="custom-file mb-3">
-          <input type="file" class="custom-file-input" id="upload-file">
-          <label for="upload-file" class="custom-file-label">Choose Image</label>
+        <div class="option">
+          <div class="save">
+            <div class="revert">
+              <button id="revert-btn" class="filter-btn revert-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                  focusable="false">
+                  <g fill="currentColor" fill-rule="nonzero">
+                    <path
+                      d="M6.036 13.418L4.49 11.872A.938.938 0 1 0 3.163 13.2l2.21 2.209a.938.938 0 0 0 1.326 0l2.209-2.21a.938.938 0 0 0-1.327-1.326l-1.545 1.546zM12 10.216a1 1 0 0 1 2 0V13a1 1 0 0 1-2 0v-2.784z">
+                    </path>
+                    <path d="M15.707 14.293a1 1 0 0 1-1.414 1.414l-2-2a1 1 0 0 1 1.414-1.414l2 2z"></path>
+                    <path
+                      d="M8.084 19.312a1 1 0 0 1 1.23-1.577 6 6 0 1 0-2.185-3.488 1 1 0 0 1-1.956.412 8 8 0 1 1 2.912 4.653z">
+                    </path>
+                  </g>
+                </svg>
+                Remove Filters</button>
+            </div>
+            <div class="down">
+              <button id="download-btn" class="download" type="button" style="opacity: 1;">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                  focusable="false">
+                  <polyline fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                    stroke-linejoin="round" points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span class="front">Done</span></button>
+            </div>
+          </div>
         </div>
-
-
-
         <div class="frame">
           <div class="center">
             <div class="tabs">
               <div class="top"></div>
-
               <input type="radio" id="tab-1" name="rd" checked="checked" />
               <label class="tab" for="tab-1">
                 <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
@@ -46,7 +66,6 @@
                   </g>
                 </svg>
               </label>
-
               <input type="radio" id="tab-2" name="rd" />
               <label class="tab" for="tab-2">
                 <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
@@ -57,7 +76,6 @@
                   </g>
                 </svg>
               </label>
-
               <input type="radio" id="tab-3" name="rd" />
               <label class="tab" for="tab-3">
                 <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
@@ -67,9 +85,6 @@
                   </g>
                 </svg>
               </label>
-
-
-
               <div class="content">
                 <div class="box " id="box-1">
                   <div class="d-flex justify-content-around">
@@ -86,7 +101,6 @@
                               opacity=".6"></path>
                           </g>
                         </svg>
-
                         Flip horizontal
                       </button>
                     </div>
@@ -120,9 +134,7 @@
                       </button>
                     </div>
                   </div>
-
                 </div>
-
                 <div class="box" id="box-2">
                   <div class="scrollmenu">
                     <div class="col-md-3 card w-auto">
@@ -167,15 +179,8 @@
                       </button>
                     </div>
                   </div>
-
-
-
-
-
                 </div>
-
                 <div class="box" id="box-3">
-
                   <div class="d-flex color justify-content-around">
                     <div class="align-self-center">
                       <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
@@ -221,46 +226,28 @@
                       <input id="saturation" name="saturation" type="range" min="1" max="100" value="1">
                     </div>
                   </div>
-
-
                 </div>
-
               </div>
             </div>
           </div>
+          <div class="canvasconatainer">
+            <div class="center1">
 
-
-
-
-
-
-          <canvas id="canvas" style="max-width:100%;">
-            <image id="theimage"></image>
-          </canvas>
-
-
-
-          <div class="row mt-5 ">
-            <div class="col-md-6 col-sm-1 download">
-              <button id="download-btn" class="btn btn-primary btn-block">Download Image</button>
+              <div class="title1">Drop file to upload</div>
+              <div class="dropzone">
+                <div class="content">
+                  <input type="file" class="custom-file-input" id="upload-file">
+                  <label for="upload-file"><img src="https://100dayscss.com/codepen/upload.svg" class="upload"></label>
+                  <label class="upload-btn" for="upload-file">Upload file</div>
+              </div>
             </div>
-            <div class="col-md-6 col-sm-1 revert">
-              <button id="revert-btn" class="btn btn-danger btn-block filter-btn revert-btn">
-                <svg width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                  focusable="false">
-                  <g fill="currentColor" fill-rule="nonzero">
-                    <path
-                      d="M6.036 13.418L4.49 11.872A.938.938 0 1 0 3.163 13.2l2.21 2.209a.938.938 0 0 0 1.326 0l2.209-2.21a.938.938 0 0 0-1.327-1.326l-1.545 1.546zM12 10.216a1 1 0 0 1 2 0V13a1 1 0 0 1-2 0v-2.784z">
-                    </path>
-                    <path d="M15.707 14.293a1 1 0 0 1-1.414 1.414l-2-2a1 1 0 0 1 1.414-1.414l2 2z"></path>
-                    <path
-                      d="M8.084 19.312a1 1 0 0 1 1.23-1.577 6 6 0 1 0-2.185-3.488 1 1 0 0 1-1.956.412 8 8 0 1 1 2.912 4.653z">
-                    </path>
-                  </g>
-                </svg>
-                Remove Filters</button>
-            </div>
+
+
+            <canvas id="canvas" style="max-width:100%;"></canvas>
           </div>
+
+
+
 
 
 
@@ -271,6 +258,7 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js'></script>
+    <script src='https://100dayscss.com/codepen/js/jquery.min.js'></script>
     <script src="./script.js"></script>
 
 </body>
